@@ -7,3 +7,20 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
+import ReactDom from 'react-dom';
+
+import React, { Component } from 'react'
+import TodoContextProvider from './context/TodoContext';
+import TodoTable from './components/TodoTable';
+
+export default class App extends Component {
+  render() {
+    return (
+      <TodoContextProvider>
+            <TodoTable/>
+      </TodoContextProvider>
+    )
+  }
+}
+
+ReactDom.render(<App/>,document.getElementById('root'));
